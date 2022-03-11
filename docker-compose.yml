@@ -1,0 +1,8 @@
+services:
+  jarapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "jarapp"
+    ports:
+      - 8080:8080
