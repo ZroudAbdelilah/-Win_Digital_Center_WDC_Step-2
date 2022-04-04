@@ -14,36 +14,36 @@ public class Exercise {
     @Column(name = "title")
     private String title;
 
-    @Column (name = "year")
+    @Column(name = "year")
     private int year;
 
     @Column(name = "date_start")
-    private LocalDateTime dateDebut;
+    private LocalDateTime dateStart;
 
     @Column(name = "date_end")
-    private LocalDateTime dateStart;
+    private LocalDateTime dateEnd;
 
     @Column(name = "status_exercise")
     private Boolean statusExercise;
 
-    public Exercise(Long exerciseId, String title, int year, LocalDateTime dateDebut, LocalDateTime dateStart, Boolean statusExercise) {
+    public Exercise() {
+    }
+
+    public Exercise(Long exerciseId, String title, int year, LocalDateTime dateStart, LocalDateTime dateEnd, Boolean statusExercise) {
         this.exerciseId = exerciseId;
         this.title = title;
         this.year = year;
-        this.dateDebut = dateDebut;
         this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
         this.statusExercise = statusExercise;
     }
 
-    public Exercise(String title, int year, LocalDateTime dateDebut, LocalDateTime dateStart, Boolean statusExercise) {
+    public Exercise(String title, int year, LocalDateTime dateStart, LocalDateTime dateEnd, Boolean statusExercise) {
         this.title = title;
         this.year = year;
-        this.dateDebut = dateDebut;
         this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
         this.statusExercise = statusExercise;
-    }
-
-    public Exercise() {
     }
 
     public Long getExerciseId() {
@@ -70,20 +70,20 @@ public class Exercise {
         this.year = year;
     }
 
-    public LocalDateTime getDateDebut() {
-        return dateDebut;
-    }
-
-    public void setDateDebut(LocalDateTime dateDebut) {
-        this.dateDebut = dateDebut;
-    }
-
     public LocalDateTime getDateStart() {
         return dateStart;
     }
 
     public void setDateStart(LocalDateTime dateStart) {
         this.dateStart = dateStart;
+    }
+
+    public LocalDateTime getDateEnd() {
+        return dateEnd;
+    }
+
+    public void setDateEnd(LocalDateTime dateEnd) {
+        this.dateEnd = dateEnd;
     }
 
     public Boolean getStatusExercise() {
@@ -100,8 +100,8 @@ public class Exercise {
                 "exerciseId=" + exerciseId +
                 ", title='" + title + '\'' +
                 ", year=" + year +
-                ", dateDebut=" + dateDebut +
                 ", dateStart=" + dateStart +
+                ", dateEnd=" + dateEnd +
                 ", statusExercise=" + statusExercise +
                 '}';
     }

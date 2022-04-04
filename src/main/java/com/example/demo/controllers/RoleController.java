@@ -24,8 +24,8 @@ public class RoleController {
     public Role find(@PathVariable("id") Long id){
         return roleService.get(id);
     }
-    @PutMapping("/update/{id}")
-    public Role update(@RequestBody Role role, @PathVariable("id") Long id){
+    @PutMapping("/update")
+    public Role update(@RequestBody Role role){
         return roleService.update(role);
     }
     @PostMapping("/add")

@@ -24,8 +24,8 @@ public class ResponsableTypeController {
     public ResponsableType find(@PathVariable("id") Long id){
         return responsableTypeService.get(id);
     }
-    @PutMapping("/update/{id}")
-    public ResponsableType update(@RequestBody ResponsableType responsableType,@PathVariable("id")Long id){
+    @PutMapping("/update")
+    public ResponsableType update(@RequestBody ResponsableType responsableType){
         return responsableTypeService.update(responsableType);
     }
     @PostMapping("/add")

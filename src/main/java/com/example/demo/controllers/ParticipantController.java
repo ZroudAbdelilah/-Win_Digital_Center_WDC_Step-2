@@ -25,7 +25,7 @@ public class ParticipantController {
         return participantService.get(id);
     }
     @PutMapping("/update/{id}")
-    public Participant update(@RequestBody Participant participant,@PathVariable("id") Long id){
+    public Participant update(@RequestBody Participant participant){
         return participantService.update(participant);
     }
     @PostMapping("/add")
