@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 public class Activiter {
     @Id
     @Column(name = "activiter_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long activiterId;
 
     @Column(name = "title")
@@ -17,10 +18,10 @@ public class Activiter {
     private String description;
 
     @Column(name = "date_start")
-    private LocalDateTime dateDebut;
+    private LocalDateTime dateStart;
 
     @Column(name = "date_end")
-    private LocalDateTime dateStart;
+    private LocalDateTime dateEnd;
 
     @ManyToOne
     @JoinColumn(name = "activiter_type_id")
@@ -33,21 +34,21 @@ public class Activiter {
     public Activiter() {
     }
 
-    public Activiter(Long activiterId, String title, String description, LocalDateTime dateDebut, LocalDateTime dateStart, ActiviterType type, Exercise exercise) {
-        this.activiterId = activiterId;
+    public Activiter(String title, String description, LocalDateTime dateStart, LocalDateTime dateEnd, ActiviterType type, Exercise exercise) {
         this.title = title;
         this.description = description;
-        this.dateDebut = dateDebut;
         this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
         this.type = type;
         this.exercise = exercise;
     }
 
-    public Activiter(String title, String description, LocalDateTime dateDebut, LocalDateTime dateStart, ActiviterType type, Exercise exercise) {
+    public Activiter(Long activiterId, String title, String description, LocalDateTime dateStart, LocalDateTime dateEnd, ActiviterType type, Exercise exercise) {
+        this.activiterId = activiterId;
         this.title = title;
         this.description = description;
-        this.dateDebut = dateDebut;
         this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
         this.type = type;
         this.exercise = exercise;
     }
@@ -76,20 +77,20 @@ public class Activiter {
         this.description = description;
     }
 
-    public LocalDateTime getDateDebut() {
-        return dateDebut;
-    }
-
-    public void setDateDebut(LocalDateTime dateDebut) {
-        this.dateDebut = dateDebut;
-    }
-
     public LocalDateTime getDateStart() {
         return dateStart;
     }
 
     public void setDateStart(LocalDateTime dateStart) {
         this.dateStart = dateStart;
+    }
+
+    public LocalDateTime getDateEnd() {
+        return dateEnd;
+    }
+
+    public void setDateEnd(LocalDateTime dateEnd) {
+        this.dateEnd = dateEnd;
     }
 
     public ActiviterType getType() {
@@ -106,18 +107,5 @@ public class Activiter {
 
     public void setExercise(Exercise exercise) {
         this.exercise = exercise;
-    }
-
-    @Override
-    public String toString() {
-        return "Activiter{" +
-                "activiterId=" + activiterId +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", dateDebut=" + dateDebut +
-                ", dateStart=" + dateStart +
-                ", type=" + type +
-                ", exercise=" + exercise +
-                '}';
     }
 }
