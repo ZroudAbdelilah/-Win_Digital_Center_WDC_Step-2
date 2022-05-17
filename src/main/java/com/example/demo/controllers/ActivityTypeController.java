@@ -9,13 +9,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/activityType")
+@CrossOrigin("*")
 public class ActivityTypeController {
     private ActiviterTypeService activiterTypeService;
     @Autowired
     public ActivityTypeController(ActiviterTypeService activiterTypeService) {
         this.activiterTypeService = activiterTypeService;
     }
-    @GetMapping("/")
+    @GetMapping("")
     public List<ActiviterType> getAll(){
         return activiterTypeService.getAll();
     }

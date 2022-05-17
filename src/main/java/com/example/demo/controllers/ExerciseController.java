@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/exercise")
+@CrossOrigin("*")
 public class ExerciseController {
     private ExerciseService exerciseService;
     @Autowired

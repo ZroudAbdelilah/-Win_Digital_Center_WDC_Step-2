@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/role")
+@RequestMapping("/roles")
+@CrossOrigin("*")
 @ResponseBody
 public class RoleController {
     private RoleService roleService;
@@ -16,7 +17,7 @@ public class RoleController {
     public RoleController(RoleService roleService) {
         this.roleService = roleService;
     }
-    @GetMapping("/")
+    @GetMapping()
     public List<Role> getAll(){
         return roleService.getAll();
     }

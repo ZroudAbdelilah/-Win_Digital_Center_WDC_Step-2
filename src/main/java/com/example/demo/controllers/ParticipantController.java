@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/participant")
-@ResponseBody
+@CrossOrigin("*")
 public class ParticipantController {
     private ParticipantService participantService;
     @Autowired

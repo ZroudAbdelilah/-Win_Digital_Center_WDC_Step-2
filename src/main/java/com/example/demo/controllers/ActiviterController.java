@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/activiter")
+@CrossOrigin("*")
 public class ActiviterController {
     private ActiviterService activiterService;
     @Autowired

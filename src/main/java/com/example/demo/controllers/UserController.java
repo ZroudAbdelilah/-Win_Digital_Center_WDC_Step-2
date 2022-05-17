@@ -8,15 +8,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/admin")
-public class AdminController {
-    private UserService userService;
+@RequestMapping("/users")
+@CrossOrigin("*")
+public class UserController {
+    private final UserService userService;
     @Autowired
-    public AdminController(UserService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public List <User> getAll(){
         return userService.getAll();
     }
@@ -32,9 +33,9 @@ public class AdminController {
     public User add(@RequestBody User user){
         return userService.add(user);
     }
-    @DeleteMapping("/delete")
-    public Boolean delete(@RequestBody User user){
-        return userService.delete(user);
+    @DeleteMapping("/delete/{id}")
+    public Boolean delete(@PathVariable("id")Long id){
+        return userService.deleteById(id);
     }
 
 }

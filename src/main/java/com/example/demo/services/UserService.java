@@ -46,4 +46,14 @@ public class UserService implements Services<User> {
             return false;
         }
     }
+
+    public boolean deleteById(long id) {
+        try {
+            userRepository.deleteById(id);
+            return true;
+        }catch (DataAccessException e){
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
 }
