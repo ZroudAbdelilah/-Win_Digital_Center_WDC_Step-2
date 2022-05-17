@@ -1,0 +1,45 @@
+<div class="container mx-auto bg-white mt-6 p-6">
+  <div class="flex items-center">
+    <div class="flex justify-between w-full">
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0L24 0 24 24 0 24z"/><path d="M16 16c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zM6 12c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm10 6c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1zM6 14c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm8.5-12C17.538 2 20 4.462 20 7.5S17.538 13 14.5 13 9 10.538 9 7.5 11.462 2 14.5 2zm0 2C12.567 4 11 5.567 11 7.5s1.567 3.5 3.5 3.5S18 9.433 18 7.5 16.433 4 14.5 4z"
+          fill="rgba(0,0,0,1)"/></svg>
+        Activites
+      </div>
+      <a href="" class="flex items-center" routerLink="/activites/add">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H5zm6 6V7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="rgba(0,0,0,1)"/></svg>
+      </a>
+    </div>
+  </div>
+  <table class=" table-auto w-full mt-4">
+    <thead class="hidden lg:table-header-group">
+      <tr class="w-full border-y-2  border-gray-100">
+        <th class="lg:text-left lg:py-2 lg:px-1">Title</th>
+        <th class="lg:text-left lg:py-2 lg:px-3">Description</th>
+        <th class="lg:text-left lg:py-2 lg:px-3">Type</th>
+        <th class="lg:text-left lg:py-2 lg:px-3">Exercice</th>
+        <th class="lg:text-left lg:py-2 lg:px-3">Start date</th>
+        <th class="lg:text-left lg:py-2 lg:px-3 ">End date</th>
+        <th class="lg:text-left lg:py-2 lg:px-3">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="lg:text-left lg:py-2 lg:px-1">Lorem Ipsum is simply dummy printing</td>
+        <td class="lg:text-left lg:py-2 lg:px-3">Lorem Ipsum is simply dummy printing en cour</td>
+        <td class="lg:text-left lg:py-2 lg:px-3">type act</td>
+        <td class="lg:text-left lg:py-2 lg:px-3">Lorem Ipsum is simply</td>
+        <td class="lg:text-left lg:py-2 lg:px-3">10/05/2022</td>
+        <td class="lg:py-2 px-3">
+            <!-- <span class="bg-green-100 py-1 px-3 text-green-800 rounded-full">Active</span> -->
+            20/05/2022
+        </td>
+        <td class="lg:text-left lg:py-2 px-3 flex relative">
+          <svg xmlns="http://www.w3.org/2000/svg" routerLink="/activites/edit" class="mr-4 cursor-pointer hover:fill-mainbleu" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-4 cursor-pointer hover:fill-mainbleu" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z"/></svg>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

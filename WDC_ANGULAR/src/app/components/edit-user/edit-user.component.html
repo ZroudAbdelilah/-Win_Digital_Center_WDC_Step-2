@@ -1,0 +1,64 @@
+<form [formGroup]="userform" class="max-w-5xl mx-auto mt-6">
+  <span class="text-2xl font-semibold text-bleudark">Edit Utilisateur</span>
+  <div class="flex">
+    <input
+      formControlName="firstName"
+      type="text"
+      placeholder="Nom"
+      class="border mt-3 mb-3 w-1/2 py-2 pl-3 border-neutral-200 rounded-md mr-3"
+    />
+    <input
+      formControlName="lastName"
+      type="text"
+      placeholder="Prenom"
+      class="border mt-3 mb-3 w-1/2 py-2 pl-3 border-neutral-200 rounded-md"
+    />
+  </div>
+  <div class="flex">
+    <input
+      formControlName="email"
+      type="text"
+      placeholder="Email"
+      class="border mt-3 mb-3 w-1/2 py-2 pl-3 border-neutral-200 rounded-md mr-3"
+    />
+    <input
+      formControlName="password"
+      type="text"
+      placeholder="Password"
+      class="border mt-3 mb-3 w-1/2 py-2 pl-3 border-neutral-200 rounded-md"
+    />
+  </div>
+  <div class="flex">
+    <input
+      formControlName="phoneNumber"
+      type="text"
+      placeholder="Telephone"
+      class="border mt-3 mb-3 w-1/2 py-2 pl-3 border-neutral-200 rounded-md mr-3"
+    />
+    <select
+      formControlName="role"
+      class="border mt-3 mb-3 w-1/2 py-2 pl-3 border-neutral-200 bg-white rounded-md mr-3"
+    >
+      <option value="">Role</option>
+
+      <option *ngFor="let role of roles" [ngValue]="role.roleId">
+        {{ role.name }}
+      </option>
+    </select>
+    <select
+      formControlName="status"
+      class="border mt-3 mb-3 w-1/2 py-2 pl-3 border-neutral-200 bg-white rounded-md"
+    >
+      <option [ngValue]="false">Etat</option>
+      <option [ngValue]="true">Actif</option>
+      <option [ngValue]="false">Inactif</option>
+    </select>
+  </div>
+
+  <button
+    (click)="updateUser()"
+    class="bg-mainbleu text-mainbg mt-3 px-8 py-2 rounded-md hover:bg-blue-700"
+  >
+    Editer l'Utilisateur
+  </button>
+</form>
